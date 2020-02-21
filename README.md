@@ -1,9 +1,9 @@
 # guacamole-postgres
 
-Aline based PostgreSQL container pre-populated with database for Apache Guacamole.
+Alpine Linux based PostgreSQL container pre-populated with database for Apache Guacamole.
 
 
-Testing:
+Local testing:
 
 ```
 docker-compose up
