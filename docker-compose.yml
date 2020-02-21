@@ -16,11 +16,16 @@ services:
     depends_on:
       - postgres
       - guacd
+    networks:
+      guacnetwork:
+      guacdb:
 
   guacd:
     container_name: 'guacd'
     image: guacamole/guacd:1.0.0
     restart: unless-stopped
+    networks:
+      guacnetwork:
 
   postgres:
     container_name: 'postgres'
@@ -32,7 +37,13 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-guac_db_password}
     volumes:
       - db_data:/var/lib/postgresql/data
+    networks:
+      guacdb:
 
 volumes:
   db_data:
     driver: local
+
+networks:
+  guacnetwork:
+  guacdb:
