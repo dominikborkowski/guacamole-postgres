@@ -3,7 +3,6 @@
 Alpine Linux based PostgreSQL container pre-populated with database for Apache Guacamole.
 
 
-
 ## Local testing
 
 
