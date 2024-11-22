@@ -1,9 +1,8 @@
-version: '3'
 services:
 
   guacamole:
     container_name: 'guacamole'
-    image: guacamole/guacamole:1.3.0
+    image: guacamole/guacamole:${GUACAMOLE_VERSION:-latest}
     ports:
       - "8080:8080"
     restart: unless-stopped
@@ -22,7 +21,7 @@ services:
 
   guacd:
     container_name: 'guacd'
-    image: guacamole/guacd:1.3.0
+    image: guacamole/guacd:${GUACAMOLE_VERSION:-latest}
     restart: unless-stopped
     networks:
       guacnetwork:
